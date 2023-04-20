@@ -1,0 +1,13 @@
+h1 {font-family: 'Nanum Brush Script', cursive;}
+body {font-family: "Nanum Brush Script", cursive;}
+.fonttest1{color:rgb(244, 0, 0)}
+.fonttest2{direction: rtl;}
+.fonttest3{letter-spacing: -0.4ch}
+.fonttest4{line-height: 5ch}
+.fonttest5{text-align: center}
+.fonttest6{text-decoration: underline; text-decoration-color: blue}
+.fonttest7{text-indent: 2ch;}
+.fonttest8{text-shadow:1px 1px 1px black;}
+/* text-shadow : x축 / y축 / 그림자의 퍼짐 / 색*/
+.fonttest10{text-transform: uppercase;}
+.fonttest9{color:violet}
