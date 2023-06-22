@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type=text]{
+            color: red;
+            border: 5px solid blue;
+            padding: 6px 10px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 2px solid rgb(50, 50, 161);
+            border-radius: 4px;
+
+        }
+        textarea{
+            border: 5px solid blue;
+            border-radius: 8px;
+            background-image: url(./10617이정훈_230327_실습파일/루퓡.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 150px 150px;
+
+        }
+        textarea:hover{
+            background-image: url(./10617이정훈_230327_실습파일/루퓡.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 150px 150px;
+            
+        }
+        input[type=text]:hover{
+            background-color: bisque;
+        }
+        input[type=text]:focus{
+            background-color: greenyellow;
+            font-size: 1.2em;
+        }
+        input[type=submit]{
+            background-color: #04aa6d;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+        }
+        input[type=submit]:hover{
+            background-color: aqua;
+            border-radius: 100px;
+            font-size: 100em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1> 상품 평</h1> <br>
+    받으신 상품을 평가해주세요
+    <form action="process.jsp">
+        <label for="name">이름</label>
+        <br>
+        <input type="text" id = "name" name="name" placeholder="이름을 입력하세요"> <br>
+        <label for="email">이메일</label><br>
+       
+        <input type="text" id = "email" name="email" placeholder="이메일을 입력하세요"> <br>
+        <label for="subject">상품 평</label><br>
+        <textarea id = "subject" name="subject" placeholder="상품 평을 입력하십시오" style="height:100px"></textarea>
+        <br>
+        <input type ="submit" value="Submit">
+    
+</body>
+</html>
