@@ -1,0 +1,36 @@
+.container{
+    height: 500px;
+    width: 500px;
+    background-color: aqua;
+    position:relative;
+}
+.container .item{
+    border: 1px solid yellowgreen;
+
+}
+.container .item:nth-child(1){
+    width: 100px;
+    height : 100px;
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    z-index: 1;
+    top: 0px;
+}
+.container .item:nth-child(2){
+    width: 100px;
+    height : 130px;
+    background-color: black;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+.container .item:nth-child(3){
+    width: 100px;
+    height : 150px;
+    background-color: gray;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}

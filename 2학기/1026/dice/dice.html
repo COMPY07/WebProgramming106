@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>주사위 굴리기</title>
+    <style>
+        * {
+            font-family: 굴림, sans-serif;
+            text-align: center;
+        }
+
+        #dice {
+            height: 100px;
+            width: 100px;
+            margin: 10px auto;
+            background-color: yellow;
+            border: 1px solid gray;
+            border-radius: 10px;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+<h3>주사위 굴리기 게임입니다.</h3>
+<p id="dice"> 5 </p>
+<button onclick="roll()">주사위 굴리기</button>
+</body>
+<script>
+    let dice = document.getElementById("dice");
+
+    let resultNumber = 0;
+    let colorList = ["yellow", "red", "blue",
+        "aqua", "green", "darkgoldenrod", "yellowgreen"];
+
+
+    let delay = 600;
+    let changeCount = 0;
+
+    let Animation;
+    function roll(){
+        resultNumber = GetRandom();
+        AnimationSetup(300, 50);
+        // Animation = setInterval(animation, delay);
+        animation()
+    }
+    function AnimationSetup(del, n){
+        changeCount = n;
+        delay = del;
+    }
+
+    function GetRandom(n = 6){
+        return Math.floor(Math.random() * n) + 1;
+    }
+
+    function EndAnimation(){
+        return dice.innerHTML = resultNumber;
+    }
+
+
+
+    function animation(){
+        if(changeCount <= 0) return EndAnimation();
+
+        if(delay <= 90) delay = 135
+        delay -= 45;
+        if(changeCount < 17) delay+= 70;
+        changeCount--;
+        dice.innerHTML=GetRandom();
+        dice.style.backgroundColor = colorList[GetRandom(7) - 1];
+        setTimeout(animation, delay)
+
+    }
+</script>
+
+</body>
+</html>
+
+
