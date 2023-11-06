@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Math Quiz</h1>
+
+
+    <select id="diff">
+        <option value="쉬움"> 쉬움</option>
+        <option value="보통">보통 </option>
+        <option value="어려움"> 어려움</option>
+    </select>
+    <input type="text" id="problem"> <input type="button" id="generation" value="생성하기" onclick="re()"> <br>
+    <input type="text" id="answer"> <input type="button" id="result" value="정답 알아보기" onclick="cal()"> <br>
+
+    <script>
+        let oper = ["+", "-", "/", "*"]
+
+
+
+        function cal(){
+            let answer = document.getElementById("answer").value;
+            let problem = document.getElementById("problem").value;
+            let solution = eval(problem);
+
+            if(parseFloat(answer) === parseFloat(solution)) alert("정답입니다..");
+            else alert(`틀렸습니다 정답은 ${solution}이였습니다.`);
+        }
+        function GetRandom(n = 0){
+            return Math.floor(Math.random() * n) + 1;
+        }
+        function re(){
+
+            let expression = "";
+
+            let diff = document.getElementById("diff")
+            let numLength = GetRandom(7) + diff.selectedIndex+1;
+            for(let i = 0; i < numLength; i++){
+                let num = GetRandom(100 * (diff.selectedIndex+1));
+                expression+=num.toString() + oper[GetRandom(4)%4];
+            }
+            let result = expression.substring(0, expression.length - 1);
+            console.log(result);
+            let problem = document.getElementById("problem");
+            problem.value = result;
+        }
+    </script>
+
+
+</body>
+</html>
