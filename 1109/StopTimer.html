@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1 id="time"></h1>
+    <input type="button" onclick="Stop()" value="멈추기">
+    <script>
+        let timer;
+        let date = new Date();
+        timer = document.getElementById("time");
+        let myTimer = Start();
+
+
+        function getTime(cuDate){
+            let time = 0;
+            let myTimeList = [1, 60, 60, 24, 365];
+            for(let tt in myTimeList){
+
+            }
+        }
+
+        function Start(){
+            Timer();
+            return setInterval(Timer, 1000);
+        }
+        function Timer(){
+            let currentDate = new Date();
+            timer.innerHTML = `${currentDate.getFullYear()}년
+                               ${currentDate.getMonth()}월
+                               ${currentDate.getDay()}일
+                               ${currentDate.getHours()}시
+                               ${currentDate.getMinutes()}분
+                               ${currentDate.getSeconds()}초`;
+        }
+
+        function Stop(){
+            clearInterval(myTimer);
+        }
+
+
+    </script>
+
+</body>
+</html>
